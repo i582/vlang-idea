@@ -1,0 +1,264 @@
+<templateSet group="V">
+  <template name="as" value="assert $expression$" description="Code snippet for testing 'assert'" toReformat="false" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="br" value="break $expression$" description="Code snippet for 'break'" toReformat="false" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="co" value="const $expression$ = $value$" description="Code snippet for 'const'" toReformat="false" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="cons" value="const (&#10;    $expression$ = $value$&#10;)" description="Code snippet for multiply 'const'" toReformat="true" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="con" value="continue $expression$" description="Code snippet for 'continue'" toReformat="false" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="def" value="defer { &#10;    $expression$&#10;}" description="Code snippet for 'defer'" toReformat="true" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="if" value="if $expression$ { &#10;    $body$&#10;}" description="Code snippet for 'if'" toReformat="true" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="el" value="else { &#10;    $body$&#10;}" description="Code snippet for 'else'" toReformat="true" toShortenFQNames="true">
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="ie" value="if $expression$ {&#10;    $body$&#10;} else { &#10;    &#10;}" description="Code snippet for 'if-else'" toReformat="true" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="eif" value="else if $expression$ {&#10;    $body$&#10;}" description="Code snippet for 'else if'" toReformat="true" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="fl" value="#flag $value$" description="Code snippet for '#flag'" toReformat="true" toShortenFQNames="true">
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="epr" value="eprint($arg$)" description="Code snippet for standart based function 'eprint'" toReformat="true" toShortenFQNames="true">
+    <variable name="arg" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="eprl" value="eprintln($arg$)" description="Code snippet for standart based function 'eprintln'" toReformat="true" toShortenFQNames="true">
+    <variable name="arg" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="finit" value="fn init() {&#10;    $body$&#10;}" description="Code snippet for 'init' function" toReformat="false" toShortenFQNames="true">
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="fmain" value="fn main() {&#10;    $body$&#10;}" description="Code snippet for 'main' function" toReformat="false" toShortenFQNames="true">
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="pr" value="print($arg$)" description="Code snippet for standart based function 'print'" toReformat="true" toShortenFQNames="true">
+    <variable name="arg" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="prl" value="println($arg$)" description="Code snippet for standart based function 'println'" toReformat="true" toShortenFQNames="true">
+    <variable name="arg" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="for" value="for {&#10;    $body$&#10;}" description="Code snippet for pure infinity loop 'for'" toReformat="false" toShortenFQNames="true">
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="fori" value="for $i$ := 0; $i$ &lt; $count$; $i$++ {&#10;    $body$&#10;}" description="Code snippet for index loop 'for'" toReformat="false" toShortenFQNames="true">
+    <variable name="i" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="count" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="forin" value="for $key$ in $value$ {&#10;    $body$&#10;}" description="Code snippet for foreach 'for'" toReformat="false" toShortenFQNames="true">
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="forini" value="for $i$, $key$ in $value$ {&#10;    $body$&#10;}" description="Code snippet for index based loop 'for'" toReformat="false" toShortenFQNames="true">
+    <variable name="i" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="fn" value="fn $name$($args$) $return$ { &#10;    $body$&#10;}" description="Code snippet for function 'fn'" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="return" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="go" value="go $name$()" description="Code snippet for concurrency 'go'&quot;" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="got" value="goto $name$" description="Code snippet for 'goto' label" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="$i" value="$if $expression$ { &#10;    $body$&#10;}" description="Code snippet for compile-time 'if'" toReformat="true" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="$ie" value="$if $expression$ {&#10;    $body$&#10;} $else { &#10;    &#10;}" description="Code snippet for compile time 'if-else'" toReformat="true" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="$el" value="$else { &#10;    $body$&#10;}" description="Code snippet for compile-time 'else'" toReformat="true" toShortenFQNames="true">
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="imp" value="import $name$" description="Code snippet for 'import'" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="inc" value="#include &lt;$name$&gt;" description="Code snippet for C '#include'" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="inte" value="interface $name$ {&#10;    $body$&#10;}" description="Code snippet for 'interface'" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="map" value="map[$key$]$value${$init$}" description="Code snippet for 'map'" toReformat="true" toShortenFQNames="true">
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="init" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="ma" value="match $expr$ {&#10;    $body$&#10;}" description="Code snippet for 'match'" toReformat="true" toShortenFQNames="true">
+    <variable name="expr" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="mod" value="module $name$" description="Code snippet for 'module'" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="pubfn" value="pub fn $name$($args$) $return$ {&#10;    $body$&#10;}" description="Code snippet for public function 'pub fn'" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="return" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="ret" value="return $expr$" description="Code snippet for 'return'" toReformat="true" toShortenFQNames="true">
+    <variable name="expr" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="stru" value="struct $name$ {&#10;    $body$&#10;}" description="Code snippet for 'struct'" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="ty" value="type $name$ = $type$" description="Code snippet for 'type'" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="un" value="union $name$ {&#10;    $body$&#10;}" description="Code snippet for  'union'" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+  <template name="en" value="enum $name$ {&#10;    $body$&#10;}" description="Code snippet for  'enum'" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VLANG" value="true" />
+    </context>
+  </template>
+</templateSet>
