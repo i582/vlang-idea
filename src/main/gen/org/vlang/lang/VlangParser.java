@@ -3020,7 +3020,7 @@ public class VlangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // (identifier | unsafe | int | string | StringLiteral) (':' (AsmIdentifier | StringLiteral))?
+  // (identifier | unsafe | int | string | StringLiteral) (':' (identifier | StringLiteral))?
   public static boolean PlainAttribute(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "PlainAttribute")) return false;
     boolean r;
@@ -3043,14 +3043,14 @@ public class VlangParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // (':' (AsmIdentifier | StringLiteral))?
+  // (':' (identifier | StringLiteral))?
   private static boolean PlainAttribute_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "PlainAttribute_1")) return false;
     PlainAttribute_1_0(b, l + 1);
     return true;
   }
 
-  // ':' (AsmIdentifier | StringLiteral)
+  // ':' (identifier | StringLiteral)
   private static boolean PlainAttribute_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "PlainAttribute_1_0")) return false;
     boolean r;
@@ -3061,11 +3061,11 @@ public class VlangParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // AsmIdentifier | StringLiteral
+  // identifier | StringLiteral
   private static boolean PlainAttribute_1_0_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "PlainAttribute_1_0_1")) return false;
     boolean r;
-    r = consumeToken(b, ASMIDENTIFIER);
+    r = consumeToken(b, IDENTIFIER);
     if (!r) r = StringLiteral(b, l + 1);
     return r;
   }

@@ -151,7 +151,6 @@ public interface VlangTypes {
 
   IElementType AS = new VlangTokenType("as");
   IElementType ASM = new VlangTokenType("asm");
-  IElementType ASMIDENTIFIER = new VlangTokenType("AsmIdentifier");
   IElementType ASM_LINE = new VlangTokenType("ASM_LINE");
   IElementType ASSERT = new VlangTokenType("assert");
   IElementType ASSIGN = new VlangTokenType("=");

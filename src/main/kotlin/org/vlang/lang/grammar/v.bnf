@@ -221,7 +221,7 @@ AttributeExpression ::= IfAttribute | PlainAttribute
 // if <ident>
 IfAttribute ::= if '!'? identifier '?'? {pin=1}
 // <ident> or 10 or "string" [: <ident> or "string"]
-PlainAttribute ::= (identifier | unsafe | int | string | StringLiteral) (':' (AsmIdentifier | StringLiteral))?
+PlainAttribute ::= (identifier | unsafe | int | string | StringLiteral) (':' (identifier | StringLiteral))?
 // end of attributes
 
 // simple statements
