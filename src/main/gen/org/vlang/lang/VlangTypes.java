@@ -128,6 +128,9 @@ public interface VlangTypes {
   IElementType SEND_STATEMENT = new VlangCompositeElementType("SEND_STATEMENT");
   IElementType SIGNATURE = new VlangCompositeElementType("SIGNATURE");
   IElementType SIMPLE_STATEMENT = new VlangCompositeElementType("SIMPLE_STATEMENT");
+  IElementType SQL_BLOCK = new VlangCompositeElementType("SQL_BLOCK");
+  IElementType SQL_EXPRESSION = new VlangCompositeElementType("SQL_EXPRESSION");
+  IElementType SQL_STATEMNT = new VlangCompositeElementType("SQL_STATEMNT");
   IElementType STATEMENT = new VlangCompositeElementType("STATEMENT");
   IElementType STRING_LITERAL = new VlangCompositeElementType("STRING_LITERAL");
   IElementType STRUCT_DECLARATION = VlangElementTypeFactory.stubFactory("STRUCT_DECLARATION");
@@ -253,6 +256,8 @@ public interface VlangTypes {
   IElementType SHIFT_LEFT_ASSIGN = new VlangTokenType("<<=");
   IElementType SHIFT_RIGHT = new VlangTokenType(">>");
   IElementType SHIFT_RIGHT_ASSIGN = new VlangTokenType(">>=");
+  IElementType SQL = new VlangTokenType("sql");
+  IElementType SQL_LINE = new VlangTokenType("SQL_LINE");
   IElementType STRING = new VlangTokenType("string");
   IElementType STRUCT = new VlangTokenType("struct");
   IElementType SWITCH = new VlangTokenType("switch");
@@ -614,6 +619,15 @@ public interface VlangTypes {
       }
       else if (type == SIMPLE_STATEMENT) {
         return new VlangSimpleStatementImpl(node);
+      }
+      else if (type == SQL_BLOCK) {
+        return new VlangSqlBlockImpl(node);
+      }
+      else if (type == SQL_EXPRESSION) {
+        return new VlangSqlExpressionImpl(node);
+      }
+      else if (type == SQL_STATEMNT) {
+        return new VlangSqlStatemntImpl(node);
       }
       else if (type == STATEMENT) {
         return new VlangStatementImpl(node);

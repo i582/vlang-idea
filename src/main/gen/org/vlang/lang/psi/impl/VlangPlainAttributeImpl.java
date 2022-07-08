@@ -46,6 +46,12 @@ public class VlangPlainAttributeImpl extends VlangCompositeElementImpl implement
 
   @Override
   @Nullable
+  public PsiElement getSql() {
+    return findChildByType(SQL);
+  }
+
+  @Override
+  @Nullable
   public PsiElement getString() {
     return findChildByType(STRING);
   }

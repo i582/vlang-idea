@@ -40,6 +40,12 @@ public class VlangStatementImpl extends VlangCompositeElementImpl implements Vla
 
   @Override
   @Nullable
+  public VlangSqlStatemnt getSqlStatemnt() {
+    return VlangPsiTreeUtil.getChildOfType(this, VlangSqlStatemnt.class);
+  }
+
+  @Override
+  @Nullable
   public VlangTypeAliasDeclaration getTypeAliasDeclaration() {
     return VlangPsiTreeUtil.getChildOfType(this, VlangTypeAliasDeclaration.class);
   }

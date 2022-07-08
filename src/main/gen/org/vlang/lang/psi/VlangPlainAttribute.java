@@ -17,6 +17,9 @@ public interface VlangPlainAttribute extends VlangCompositeElement {
   PsiElement getInt();
 
   @Nullable
+  PsiElement getSql();
+
+  @Nullable
   PsiElement getString();
 
   @Nullable

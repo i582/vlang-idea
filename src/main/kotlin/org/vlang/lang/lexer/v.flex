@@ -68,6 +68,8 @@ C_STRING_ANGLE = {STR_ANGLE_OPEN} ([^\<\>\\\n\r])* {STR_ANGLE_CLOSE}
 %state C_FLAG_VALUE_EXPECTED
 %state ASM_BLOCK
 %state ASM_BLOCK_LINE
+%state SQL_BLOCK
+%state SQL_BLOCK_LINE
 
 %%
 
@@ -213,6 +215,7 @@ C_STRING_ANGLE = {STR_ANGLE_OPEN} ([^\<\>\\\n\r])* {STR_ANGLE_CLOSE}
 
 "volatile"                                { return VOLATILE; }
 "asm"                                     { yybegin(ASM_BLOCK); return ASM; }
+"sql"                                     { yybegin(SQL_BLOCK); return SQL; }
 
 "__global"                                { return BUILTIN_GLOBAL; }
 
@@ -275,4 +278,22 @@ C_STRING_ANGLE = {STR_ANGLE_OPEN} ([^\<\>\\\n\r])* {STR_ANGLE_CLOSE}
 {NL}+                                     { return NLS; }
 "}"                                       { yybegin(MAYBE_SEMICOLON); return RBRACE; }
 [^}\r\n]+                                 { return ASM_LINE; }
+}
+
+<SQL_BLOCK> {
+{WS}                                      { return WS; }
+{NL}+                                     { return NLS; }
+
+// hack
+":"                                       { yybegin(YYINITIAL); return COLON; }
+
+{IDENT}                                   { return IDENTIFIER; }
+
+"{"                                       { yybegin(SQL_BLOCK_LINE); return LBRACE; }
+}
+
+<SQL_BLOCK_LINE> {
+{NL}+                                     { return NLS; }
+"}"                                       { yybegin(MAYBE_SEMICOLON); return RBRACE; }
+[^}\r\n]+                                 { return SQL_LINE; }
 }

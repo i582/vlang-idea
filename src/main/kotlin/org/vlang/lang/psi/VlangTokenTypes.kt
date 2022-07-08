@@ -76,6 +76,7 @@ object VlangTokenTypes {
         SHARED,
         ASM,
         VOLATILE,
+        SQL,
     )
 
     val OPERATORS = TokenSet.create(
