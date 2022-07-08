@@ -30,6 +30,8 @@ LANGUAGE_INJECTION_COMMENT = [^\r\n]*
 DOC_COMMENT = "/**" ( ([^"*"]|[\r\n])* ("*"+ [^"*""/"] )? )* ("*" | "*"+"/")?
 MULTILINE_COMMENT = "/*" ( ([^"*"]|[\r\n])* ("*"+ [^"*""/"] )? )* ("*" | "*"+"/")?
 
+ASM_COMMENT = ";" [^\r\n]*
+
 LETTER = [:letter:] | "_"
 DIGIT =  [:digit:]
 
@@ -64,6 +66,8 @@ C_STRING_ANGLE = {STR_ANGLE_OPEN} ([^\<\>\\\n\r])* {STR_ANGLE_CLOSE}
 %state MAYBE_SEMICOLON
 %state C_STRING_LITERAL
 %state C_FLAG_VALUE_EXPECTED
+%state ASM_BLOCK
+%state ASM_BLOCK_LINE
 
 %%
 
@@ -207,6 +211,9 @@ C_STRING_ANGLE = {STR_ANGLE_OPEN} ([^\<\>\\\n\r])* {STR_ANGLE_CLOSE}
 "type"                                    { return TYPE_; }
 "mut"                                     { return MUT; }
 
+"volatile"                                { return VOLATILE; }
+"asm"                                     { yybegin(ASM_BLOCK); return ASM; }
+
 "__global"                                { return BUILTIN_GLOBAL; }
 
 ^"#" {LANGUAGE_INJECTION_COMMENT}         { yybegin(MAYBE_SEMICOLON); return LANGUAGE_INJECTION; }
@@ -252,4 +259,20 @@ C_STRING_ANGLE = {STR_ANGLE_OPEN} ([^\<\>\\\n\r])* {STR_ANGLE_CLOSE}
 {WS}                                      { return WS; }
 [^\r\n]+                                  { yybegin(MAYBE_SEMICOLON); return C_FLAG_VALUE; }
 .                                         { yybegin(YYINITIAL); yypushback(yytext().length()); }
+}
+
+<ASM_BLOCK> {
+{WS}                                      { return WS; }
+{NL}+                                     { return NLS; }
+
+"volatile"                                { return VOLATILE; }
+{IDENT}                                   { return IDENTIFIER; }
+
+"{"                                       { yybegin(ASM_BLOCK_LINE); return LBRACE; }
+}
+
+<ASM_BLOCK_LINE> {
+{NL}+                                     { return NLS; }
+"}"                                       { yybegin(MAYBE_SEMICOLON); return RBRACE; }
+[^}\r\n]+                                 { return ASM_LINE; }
 }

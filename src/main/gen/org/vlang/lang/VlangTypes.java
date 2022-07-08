@@ -19,6 +19,8 @@ public interface VlangTypes {
   IElementType ARRAY_CREATION = new VlangCompositeElementType("ARRAY_CREATION");
   IElementType ARRAY_CREATION_LIST = new VlangCompositeElementType("ARRAY_CREATION_LIST");
   IElementType ARRAY_OR_SLICE_TYPE = new VlangCompositeElementType("ARRAY_OR_SLICE_TYPE");
+  IElementType ASM_BLOCK = new VlangCompositeElementType("ASM_BLOCK");
+  IElementType ASM_BLOCK_STATEMENT = new VlangCompositeElementType("ASM_BLOCK_STATEMENT");
   IElementType ASSERT_STATEMENT = new VlangCompositeElementType("ASSERT_STATEMENT");
   IElementType ASSIGNMENT_STATEMENT = new VlangCompositeElementType("ASSIGNMENT_STATEMENT");
   IElementType ASSIGN_OP = new VlangCompositeElementType("ASSIGN_OP");
@@ -148,6 +150,9 @@ public interface VlangTypes {
   IElementType VAR_MODIFIERS = new VlangCompositeElementType("VAR_MODIFIERS");
 
   IElementType AS = new VlangTokenType("as");
+  IElementType ASM = new VlangTokenType("asm");
+  IElementType ASMIDENTIFIER = new VlangTokenType("AsmIdentifier");
+  IElementType ASM_LINE = new VlangTokenType("ASM_LINE");
   IElementType ASSERT = new VlangTokenType("assert");
   IElementType ASSIGN = new VlangTokenType("=");
   IElementType AT = new VlangTokenType("@");
@@ -258,6 +263,7 @@ public interface VlangTypes {
   IElementType UNSAFE = new VlangTokenType("unsafe");
   IElementType VAR = new VlangTokenType("var");
   IElementType VAR_ASSIGN = new VlangTokenType(":=");
+  IElementType VOLATILE = new VlangTokenType("volatile");
 
   class Factory {
     public static PsiElement createElement(ASTNode node) {
@@ -285,6 +291,12 @@ public interface VlangTypes {
       }
       else if (type == ARRAY_OR_SLICE_TYPE) {
         return new VlangArrayOrSliceTypeImpl(node);
+      }
+      else if (type == ASM_BLOCK) {
+        return new VlangAsmBlockImpl(node);
+      }
+      else if (type == ASM_BLOCK_STATEMENT) {
+        return new VlangAsmBlockStatementImpl(node);
       }
       else if (type == ASSERT_STATEMENT) {
         return new VlangAssertStatementImpl(node);

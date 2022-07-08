@@ -34,8 +34,20 @@ public class VlangPlainAttributeImpl extends VlangCompositeElementImpl implement
 
   @Override
   @Nullable
+  public PsiElement getAsmIdentifier() {
+    return findChildByType(ASMIDENTIFIER);
+  }
+
+  @Override
+  @Nullable
   public PsiElement getColon() {
     return findChildByType(COLON);
+  }
+
+  @Override
+  @Nullable
+  public PsiElement getIdentifier() {
+    return findChildByType(IDENTIFIER);
   }
 
   @Override

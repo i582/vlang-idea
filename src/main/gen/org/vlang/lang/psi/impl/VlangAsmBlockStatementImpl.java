@@ -10,15 +10,15 @@ import org.vlang.lang.psi.VlangPsiTreeUtil;
 import static org.vlang.lang.VlangTypes.*;
 import org.vlang.lang.psi.*;
 
-public class VlangDotExpressionImpl extends VlangExpressionImpl implements VlangDotExpression {
+public class VlangAsmBlockStatementImpl extends VlangStatementImpl implements VlangAsmBlockStatement {
 
-  public VlangDotExpressionImpl(@NotNull ASTNode node) {
+  public VlangAsmBlockStatementImpl(@NotNull ASTNode node) {
     super(node);
   }
 
   @Override
   public void accept(@NotNull VlangVisitor visitor) {
-    visitor.visitDotExpression(this);
+    visitor.visitAsmBlockStatement(this);
   }
 
   @Override
@@ -28,27 +28,27 @@ public class VlangDotExpressionImpl extends VlangExpressionImpl implements Vlang
   }
 
   @Override
+  @Nullable
+  public VlangAsmBlock getAsmBlock() {
+    return VlangPsiTreeUtil.getChildOfType(this, VlangAsmBlock.class);
+  }
+
+  @Override
   @NotNull
-  public VlangExpression getExpression() {
-    return notNullChild(VlangPsiTreeUtil.getChildOfType(this, VlangExpression.class));
+  public PsiElement getAsm() {
+    return notNullChild(findChildByType(ASM));
   }
 
   @Override
   @Nullable
-  public VlangFieldLookup getFieldLookup() {
-    return VlangPsiTreeUtil.getChildOfType(this, VlangFieldLookup.class);
+  public PsiElement getIdentifier() {
+    return findChildByType(IDENTIFIER);
   }
 
   @Override
   @Nullable
-  public VlangMethodCall getMethodCall() {
-    return VlangPsiTreeUtil.getChildOfType(this, VlangMethodCall.class);
-  }
-
-  @Override
-  @Nullable
-  public PsiElement getDot() {
-    return findChildByType(DOT);
+  public PsiElement getVolatile() {
+    return findChildByType(VOLATILE);
   }
 
 }

@@ -28,6 +28,18 @@ public class VlangIfAttributeImpl extends VlangCompositeElementImpl implements V
 
   @Override
   @Nullable
+  public PsiElement getNot() {
+    return findChildByType(NOT);
+  }
+
+  @Override
+  @Nullable
+  public PsiElement getQuestion() {
+    return findChildByType(QUESTION);
+  }
+
+  @Override
+  @Nullable
   public PsiElement getIdentifier() {
     return findChildByType(IDENTIFIER);
   }

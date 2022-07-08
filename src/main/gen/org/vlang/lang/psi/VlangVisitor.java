@@ -42,6 +42,14 @@ public class VlangVisitor extends PsiElementVisitor {
     visitExpression(o);
   }
 
+  public void visitAsmBlock(@NotNull VlangAsmBlock o) {
+    visitCompositeElement(o);
+  }
+
+  public void visitAsmBlockStatement(@NotNull VlangAsmBlockStatement o) {
+    visitStatement(o);
+  }
+
   public void visitAssertStatement(@NotNull VlangAssertStatement o) {
     visitStatement(o);
   }

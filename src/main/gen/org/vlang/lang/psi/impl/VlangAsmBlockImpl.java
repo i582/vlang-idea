@@ -10,15 +10,14 @@ import org.vlang.lang.psi.VlangPsiTreeUtil;
 import static org.vlang.lang.VlangTypes.*;
 import org.vlang.lang.psi.*;
 
-public class VlangDotExpressionImpl extends VlangExpressionImpl implements VlangDotExpression {
+public class VlangAsmBlockImpl extends VlangCompositeElementImpl implements VlangAsmBlock {
 
-  public VlangDotExpressionImpl(@NotNull ASTNode node) {
+  public VlangAsmBlockImpl(@NotNull ASTNode node) {
     super(node);
   }
 
-  @Override
   public void accept(@NotNull VlangVisitor visitor) {
-    visitor.visitDotExpression(this);
+    visitor.visitAsmBlock(this);
   }
 
   @Override
@@ -29,26 +28,14 @@ public class VlangDotExpressionImpl extends VlangExpressionImpl implements Vlang
 
   @Override
   @NotNull
-  public VlangExpression getExpression() {
-    return notNullChild(VlangPsiTreeUtil.getChildOfType(this, VlangExpression.class));
+  public PsiElement getLbrace() {
+    return notNullChild(findChildByType(LBRACE));
   }
 
   @Override
   @Nullable
-  public VlangFieldLookup getFieldLookup() {
-    return VlangPsiTreeUtil.getChildOfType(this, VlangFieldLookup.class);
-  }
-
-  @Override
-  @Nullable
-  public VlangMethodCall getMethodCall() {
-    return VlangPsiTreeUtil.getChildOfType(this, VlangMethodCall.class);
-  }
-
-  @Override
-  @Nullable
-  public PsiElement getDot() {
-    return findChildByType(DOT);
+  public PsiElement getRbrace() {
+    return findChildByType(RBRACE);
   }
 
 }

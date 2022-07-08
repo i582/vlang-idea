@@ -5,18 +5,18 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface VlangIfAttribute extends VlangCompositeElement {
+public interface VlangAsmBlockStatement extends VlangStatement {
 
   @Nullable
-  PsiElement getNot();
+  VlangAsmBlock getAsmBlock();
 
-  @Nullable
-  PsiElement getQuestion();
+  @NotNull
+  PsiElement getAsm();
 
   @Nullable
   PsiElement getIdentifier();
 
-  @NotNull
-  PsiElement getIf();
+  @Nullable
+  PsiElement getVolatile();
 
 }

@@ -11,7 +11,13 @@ public interface VlangPlainAttribute extends VlangCompositeElement {
   List<VlangStringLiteral> getStringLiteralList();
 
   @Nullable
+  PsiElement getAsmIdentifier();
+
+  @Nullable
   PsiElement getColon();
+
+  @Nullable
+  PsiElement getIdentifier();
 
   @Nullable
   PsiElement getInt();
