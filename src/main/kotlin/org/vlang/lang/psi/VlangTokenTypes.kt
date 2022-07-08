@@ -11,15 +11,12 @@ object VlangTokenTypes {
     val MULTILINE_COMMENT = VlangTokenType("VLANG_MULTILINE_COMMENT")
 
     @JvmField
-    val ASM_LINE_COMMENT = VlangTokenType("ASM_LINE_COMMENT")
-
-    @JvmField
     val WS = VlangTokenType("VLANG_WHITESPACE")
 
     @JvmField
     val NLS = VlangTokenType("VLANG_WS_NEW_LINES")
 
-    val COMMENTS = TokenSet.create(LINE_COMMENT, MULTILINE_COMMENT, VlangDocTokenTypes.DOC_COMMENT, ASM_LINE_COMMENT)
+    val COMMENTS = TokenSet.create(LINE_COMMENT, MULTILINE_COMMENT, VlangDocTokenTypes.DOC_COMMENT)
     val STRING_LITERALS = TokenSet.create(STRING, RAW_STRING, CHAR)
     val NUMBERS = TokenSet.create(
         INT,
