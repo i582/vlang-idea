@@ -12,7 +12,7 @@ Vlang is a language plugin for IntelliJ IDEA that adds support for V language.
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- V Mod File -->
-        <fileType name="vmod"
+        <fileType name="V Module"
                   implementationClass="org.vlang.lang.vmod.VmodFileType"
                   fieldName="INSTANCE"
                   language="vmod"
@@ -38,7 +38,7 @@ Vlang is a language plugin for IntelliJ IDEA that adds support for V language.
         <completion.contributor language="vmod"
                                 implementationClass="org.vlang.lang.vmod.completion.VmodCompletionContributor"/>
 
-        <fileType name="vlang"
+        <fileType name="V"
                   implementationClass="org.vlang.lang.VlangFileType"
                   fieldName="INSTANCE"
                   language="vlang"

@@ -5,7 +5,6 @@ import com.intellij.lang.ASTNode
 import com.intellij.psi.PsiElement
 import com.intellij.psi.ResolveState
 import com.intellij.psi.scope.PsiScopeProcessor
-import org.vlang.lang.psi.VlangCompositeElement
 import org.vlang.lang.vmod.psi.VmodCompositeElement
 
 open class VmodCompositeElementImpl(node: ASTNode) : ASTWrapperPsiElement(node), VmodCompositeElement {

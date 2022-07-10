@@ -7,14 +7,11 @@
   elementTypeHolderClass='org.vlang.lang.vmod.VmodTypes'
   elementTypeClass='org.vlang.lang.vmod.psi.VmodCompositeElementType'
   tokenTypeClass='org.vlang.lang.vmod.psi.VmodTokenType'
-//  psiTreeUtilClass='org.vlang.lang.psi.VlangPsiTreeUtil'
 
   psiClassPrefix='Vmod'
   psiImplClassSuffix='Impl'
   psiPackage='org.vlang.lang.vmod.psi'
   psiImplPackage='org.vlang.lang.vmod.psi.impl'
-//  psiImplUtilClass="org.vlang.lang.psi.impl.VlangPsiImplUtil"
-//  parserUtilClass="org.vlang.lang.VlangParserUtil"
 
   tokens=[
     LBRACE               =  '{'
@@ -46,7 +43,7 @@ Expression ::= string | Array
 
 Array ::= '[' ArrayItems? ']'
 
-ArrayItems ::= ArrayItem (',' ArrayItem)*
+ArrayItems ::= ArrayItem semi? (',' ArrayItem semi?)* ','? {pin=2}
 
 ArrayItem ::= string
 

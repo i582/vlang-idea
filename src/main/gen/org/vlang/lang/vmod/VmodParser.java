@@ -69,38 +69,63 @@ public class VmodParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // ArrayItem (',' ArrayItem)*
+  // ArrayItem semi? (',' ArrayItem semi?)* ','?
   public static boolean ArrayItems(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ArrayItems")) return false;
     if (!nextTokenIs(b, STRING)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
+    boolean r, p;
+    Marker m = enter_section_(b, l, _NONE_, ARRAY_ITEMS, null);
     r = ArrayItem(b, l + 1);
     r = r && ArrayItems_1(b, l + 1);
-    exit_section_(b, m, ARRAY_ITEMS, r);
-    return r;
+    p = r; // pin = 2
+    r = r && report_error_(b, ArrayItems_2(b, l + 1));
+    r = p && ArrayItems_3(b, l + 1) && r;
+    exit_section_(b, l, m, r, p, null);
+    return r || p;
   }
 
-  // (',' ArrayItem)*
+  // semi?
   private static boolean ArrayItems_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ArrayItems_1")) return false;
+    semi(b, l + 1);
+    return true;
+  }
+
+  // (',' ArrayItem semi?)*
+  private static boolean ArrayItems_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "ArrayItems_2")) return false;
     while (true) {
       int c = current_position_(b);
-      if (!ArrayItems_1_0(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "ArrayItems_1", c)) break;
+      if (!ArrayItems_2_0(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "ArrayItems_2", c)) break;
     }
     return true;
   }
 
-  // ',' ArrayItem
-  private static boolean ArrayItems_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "ArrayItems_1_0")) return false;
+  // ',' ArrayItem semi?
+  private static boolean ArrayItems_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "ArrayItems_2_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, COMMA);
     r = r && ArrayItem(b, l + 1);
+    r = r && ArrayItems_2_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
+  }
+
+  // semi?
+  private static boolean ArrayItems_2_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "ArrayItems_2_0_2")) return false;
+    semi(b, l + 1);
+    return true;
+  }
+
+  // ','?
+  private static boolean ArrayItems_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "ArrayItems_3")) return false;
+    consumeToken(b, COMMA);
+    return true;
   }
 
   /* ********************************************************** */
