@@ -174,36 +174,37 @@ public class _VlangLexer implements FlexLexer, VlangTypes {
 
   private static final String ZZ_ACTION_PACKED_0 =
     "\11\0\1\1\1\2\1\3\1\4\1\5\2\6\1\1"+
-    "\2\7\2\6\1\10\1\11\2\6\3\1\5\6\1\12"+
-    "\1\13\1\1\1\6\1\14\1\15\1\16\1\17\1\1"+
-    "\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27"+
-    "\1\30\1\31\1\32\1\33\1\34\1\35\1\36\11\6"+
-    "\1\37\1\40\1\41\1\3\1\40\1\42\1\3\2\40"+
-    "\1\43\1\3\2\44\1\45\1\46\1\47\1\50\1\51"+
-    "\1\0\1\37\1\52\1\53\1\54\1\55\1\6\1\0"+
-    "\1\56\6\0\1\57\1\6\1\60\1\61\1\62\1\63"+
-    "\1\0\3\6\1\0\1\64\3\0\5\6\1\65\2\6"+
-    "\1\66\1\67\1\70\1\71\1\72\1\73\1\0\1\6"+
-    "\1\74\1\75\1\76\2\0\1\77\1\100\1\101\1\0"+
-    "\1\102\1\103\1\104\1\105\1\106\1\107\1\110\1\111"+
-    "\1\112\1\113\5\6\1\114\1\115\13\6\1\76\2\37"+
-    "\1\53\1\116\1\0\1\117\2\0\1\44\1\120\1\6"+
-    "\1\7\1\62\1\0\1\121\1\122\1\123\1\6\1\0"+
-    "\1\124\1\125\2\6\1\126\1\6\1\0\6\6\1\127"+
-    "\2\6\1\130\1\131\1\73\3\0\1\132\1\0\2\6"+
-    "\4\0\1\133\4\6\1\134\6\6\1\135\4\6\1\136"+
-    "\1\137\2\37\1\53\1\44\1\120\1\6\4\0\2\6"+
-    "\1\140\4\6\1\141\2\6\1\142\1\143\4\0\2\6"+
-    "\2\0\1\144\1\145\2\6\1\146\4\6\1\147\4\6"+
-    "\1\150\1\151\2\6\2\37\1\53\1\0\1\44\1\120"+
-    "\1\0\1\6\1\152\1\153\1\6\1\154\1\155\3\6"+
-    "\2\73\2\0\1\156\1\6\1\0\1\157\3\6\1\160"+
-    "\1\6\1\161\5\6\1\162\1\37\1\157\1\44\1\6"+
-    "\1\163\2\6\1\164\4\0\1\165\1\0\1\6\1\166"+
-    "\2\6\1\167\1\170\1\171\1\172\1\173\1\37\1\44"+
-    "\3\6\3\0\1\6\1\174\1\6\1\37\1\44\1\175"+
-    "\1\176\1\177\2\0\1\200\2\6\1\200\1\177\2\73"+
-    "\1\201\1\6\2\0\1\6\1\0\1\202\1\0";
+    "\2\7\2\6\1\10\1\11\2\6\1\1\1\12\1\13"+
+    "\5\6\1\14\1\15\1\16\1\6\1\17\1\20\1\21"+
+    "\1\22\1\1\1\23\1\24\1\25\1\26\1\27\1\30"+
+    "\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1\40"+
+    "\1\41\11\6\1\42\1\43\1\44\1\3\1\43\1\45"+
+    "\1\3\2\43\1\46\1\3\2\47\1\50\1\51\1\52"+
+    "\1\53\1\54\1\0\1\42\1\55\1\56\1\57\1\60"+
+    "\1\6\1\0\1\61\6\0\1\62\1\6\1\63\1\64"+
+    "\1\65\1\66\1\0\3\6\1\0\1\67\3\0\5\6"+
+    "\1\70\2\6\1\71\1\72\1\73\1\74\1\75\1\76"+
+    "\1\0\1\6\1\77\1\100\1\101\2\0\1\102\1\103"+
+    "\1\104\1\0\1\105\1\106\1\107\1\110\1\111\1\112"+
+    "\1\113\1\114\1\115\1\116\5\6\1\117\1\120\13\6"+
+    "\1\101\2\42\1\56\1\121\1\0\1\122\2\0\1\47"+
+    "\1\123\1\6\1\7\1\65\1\0\1\124\1\125\1\126"+
+    "\1\6\1\0\1\127\1\130\2\6\1\131\1\6\1\0"+
+    "\6\6\1\132\2\6\1\133\1\134\1\76\3\0\1\135"+
+    "\1\0\2\6\4\0\1\136\4\6\1\137\6\6\1\140"+
+    "\4\6\1\141\1\142\2\42\1\56\1\47\1\123\1\6"+
+    "\4\0\2\6\1\143\4\6\1\144\2\6\1\145\1\146"+
+    "\4\0\2\6\2\0\1\147\1\150\2\6\1\151\4\6"+
+    "\1\152\4\6\1\153\1\154\2\6\2\42\1\56\1\0"+
+    "\1\47\1\123\1\0\1\6\1\155\1\156\1\6\1\157"+
+    "\1\160\3\6\2\76\2\0\1\161\1\6\1\0\1\162"+
+    "\3\6\1\163\1\6\1\164\5\6\1\165\1\42\1\162"+
+    "\1\47\1\6\1\166\2\6\1\167\4\0\1\170\1\0"+
+    "\1\6\1\171\2\6\1\172\1\173\1\174\1\175\1\176"+
+    "\1\42\1\47\3\6\3\0\1\6\1\177\1\6\1\42"+
+    "\1\47\1\200\1\201\1\202\2\0\1\203\2\6\1\203"+
+    "\1\202\2\76\1\204\1\6\2\0\1\6\1\0\1\205"+
+    "\1\0";
 
   private static int [] zzUnpackAction() {
     int [] result = new int[376];
@@ -1071,652 +1072,667 @@ public class _VlangLexer implements FlexLexer, VlangTypes {
             { return BAD_CHARACTER;
             } 
             // fall through
-          case 131: break;
+          case 134: break;
           case 2: 
             { return NLS;
             } 
             // fall through
-          case 132: break;
+          case 135: break;
           case 3: 
             { return WS;
             } 
             // fall through
-          case 133: break;
+          case 136: break;
           case 4: 
             { return QUOTIENT;
             } 
             // fall through
-          case 134: break;
+          case 137: break;
           case 5: 
             { return MUL;
             } 
             // fall through
-          case 135: break;
+          case 138: break;
           case 6: 
             { yybegin(MAYBE_SEMICOLON); return IDENTIFIER;
             } 
             // fall through
-          case 136: break;
+          case 139: break;
           case 7: 
             { yybegin(MAYBE_SEMICOLON); return INT;
             } 
             // fall through
-          case 137: break;
+          case 140: break;
           case 8: 
             { return MINUS;
             } 
             // fall through
-          case 138: break;
+          case 141: break;
           case 9: 
             { return DOT;
             } 
             // fall through
-          case 139: break;
-          case 10: 
-            { return LESS;
-            } 
-            // fall through
-          case 140: break;
-          case 11: 
-            { yybegin(MAYBE_SEMICOLON); return GREATER;
-            } 
-            // fall through
-          case 141: break;
-          case 12: 
-            { return TILDA;
-            } 
-            // fall through
           case 142: break;
-          case 13: 
-            { return BIT_OR;
+          case 10: 
+            { return DOUBLE_QUOTE;
             } 
             // fall through
           case 143: break;
-          case 14: 
-            { return LBRACE;
+          case 11: 
+            { return SINGLE_QUOTE;
             } 
             // fall through
           case 144: break;
-          case 15: 
-            { yybegin(MAYBE_SEMICOLON); return RBRACE;
+          case 12: 
+            { return LESS;
             } 
             // fall through
           case 145: break;
-          case 16: 
-            { return LBRACK;
+          case 13: 
+            { yybegin(MAYBE_SEMICOLON); return GREATER;
             } 
             // fall through
           case 146: break;
-          case 17: 
-            { yybegin(MAYBE_SEMICOLON); return RBRACK;
+          case 14: 
+            { return BACKTICK;
             } 
             // fall through
           case 147: break;
-          case 18: 
-            { return LPAREN;
+          case 15: 
+            { return TILDA;
             } 
             // fall through
           case 148: break;
-          case 19: 
-            { yybegin(MAYBE_SEMICOLON); return RPAREN;
+          case 16: 
+            { return BIT_OR;
             } 
             // fall through
           case 149: break;
-          case 20: 
-            { yybegin(MAYBE_SEMICOLON); return COLON;
+          case 17: 
+            { return LBRACE;
             } 
             // fall through
           case 150: break;
-          case 21: 
-            { return SEMICOLON;
+          case 18: 
+            { yybegin(MAYBE_SEMICOLON); return RBRACE;
             } 
             // fall through
           case 151: break;
-          case 22: 
-            { return COMMA;
+          case 19: 
+            { return LBRACK;
             } 
             // fall through
           case 152: break;
-          case 23: 
-            { return ASSIGN;
+          case 20: 
+            { yybegin(MAYBE_SEMICOLON); return RBRACK;
             } 
             // fall through
           case 153: break;
-          case 24: 
-            { yybegin(MAYBE_SEMICOLON); return NOT;
+          case 21: 
+            { return LPAREN;
             } 
             // fall through
           case 154: break;
-          case 25: 
-            { yybegin(MAYBE_SEMICOLON); return QUESTION;
+          case 22: 
+            { yybegin(MAYBE_SEMICOLON); return RPAREN;
             } 
             // fall through
           case 155: break;
-          case 26: 
-            { return PLUS;
+          case 23: 
+            { yybegin(MAYBE_SEMICOLON); return COLON;
             } 
             // fall through
           case 156: break;
-          case 27: 
-            { return BIT_AND;
+          case 24: 
+            { return SEMICOLON;
             } 
             // fall through
           case 157: break;
-          case 28: 
-            { return BIT_XOR;
+          case 25: 
+            { return COMMA;
             } 
             // fall through
           case 158: break;
-          case 29: 
-            { return REMAINDER;
+          case 26: 
+            { return ASSIGN;
             } 
             // fall through
           case 159: break;
-          case 30: 
-            { return AT;
+          case 27: 
+            { yybegin(MAYBE_SEMICOLON); return NOT;
             } 
             // fall through
           case 160: break;
-          case 31: 
-            { yybegin(MAYBE_SEMICOLON); return LANGUAGE_INJECTION;
+          case 28: 
+            { yybegin(MAYBE_SEMICOLON); return QUESTION;
             } 
             // fall through
           case 161: break;
-          case 32: 
-            { yybegin(YYINITIAL); yypushback(yytext().length());
+          case 29: 
+            { return PLUS;
             } 
             // fall through
           case 162: break;
-          case 33: 
-            { yybegin(YYINITIAL); yypushback(yytext().length()); return SEMICOLON_SYNTHETIC;
+          case 30: 
+            { return BIT_AND;
             } 
             // fall through
           case 163: break;
-          case 34: 
-            { yybegin(YYINITIAL); return NLS;
+          case 31: 
+            { return BIT_XOR;
             } 
             // fall through
           case 164: break;
-          case 35: 
-            { yybegin(MAYBE_SEMICOLON); return C_FLAG_VALUE;
+          case 32: 
+            { return REMAINDER;
             } 
             // fall through
           case 165: break;
-          case 36: 
-            { return IDENTIFIER;
+          case 33: 
+            { return AT;
             } 
             // fall through
           case 166: break;
-          case 37: 
-            { yybegin(ASM_BLOCK_LINE); return LBRACE;
+          case 34: 
+            { yybegin(MAYBE_SEMICOLON); return LANGUAGE_INJECTION;
             } 
             // fall through
           case 167: break;
-          case 38: 
-            { return ASM_LINE;
+          case 35: 
+            { yybegin(YYINITIAL); yypushback(yytext().length());
             } 
             // fall through
           case 168: break;
-          case 39: 
-            { yybegin(SQL_BLOCK_LINE); return LBRACE;
+          case 36: 
+            { yybegin(YYINITIAL); yypushback(yytext().length()); return SEMICOLON_SYNTHETIC;
             } 
             // fall through
           case 169: break;
-          case 40: 
-            { yybegin(YYINITIAL); return COLON;
+          case 37: 
+            { yybegin(YYINITIAL); return NLS;
             } 
             // fall through
           case 170: break;
-          case 41: 
-            { return SQL_LINE;
+          case 38: 
+            { yybegin(MAYBE_SEMICOLON); return C_FLAG_VALUE;
             } 
             // fall through
           case 171: break;
-          case 42: 
-            { return LINE_COMMENT;
+          case 39: 
+            { return IDENTIFIER;
             } 
             // fall through
           case 172: break;
-          case 43: 
-            { return MULTILINE_COMMENT;
+          case 40: 
+            { yybegin(ASM_BLOCK_LINE); return LBRACE;
             } 
             // fall through
           case 173: break;
-          case 44: 
-            { return QUOTIENT_ASSIGN;
+          case 41: 
+            { return ASM_LINE;
             } 
             // fall through
           case 174: break;
-          case 45: 
-            { return MUL_ASSIGN;
+          case 42: 
+            { yybegin(SQL_BLOCK_LINE); return LBRACE;
             } 
             // fall through
           case 175: break;
-          case 46: 
-            { yybegin(MAYBE_SEMICOLON); return DECIMALI;
+          case 43: 
+            { yybegin(YYINITIAL); return COLON;
             } 
             // fall through
           case 176: break;
-          case 47: 
-            { return OR ;
+          case 44: 
+            { return SQL_LINE;
             } 
             // fall through
           case 177: break;
-          case 48: 
-            { yybegin(MAYBE_SEMICOLON); return MINUS_MINUS;
+          case 45: 
+            { return LINE_COMMENT;
             } 
             // fall through
           case 178: break;
-          case 49: 
-            { return MINUS_ASSIGN;
+          case 46: 
+            { return MULTILINE_COMMENT;
             } 
             // fall through
           case 179: break;
-          case 50: 
-            { yybegin(MAYBE_SEMICOLON); return FLOAT;
+          case 47: 
+            { return QUOTIENT_ASSIGN;
             } 
             // fall through
           case 180: break;
-          case 51: 
-            { return RANGE;
+          case 48: 
+            { return MUL_ASSIGN;
             } 
             // fall through
           case 181: break;
-          case 52: 
-            { yybegin(MAYBE_SEMICOLON); return RAW_STRING;
+          case 49: 
+            { yybegin(MAYBE_SEMICOLON); return DECIMALI;
             } 
             // fall through
           case 182: break;
-          case 53: 
-            { return AS ;
+          case 50: 
+            { return OR ;
             } 
             // fall through
           case 183: break;
-          case 54: 
-            { return SEND_CHANNEL;
+          case 51: 
+            { yybegin(MAYBE_SEMICOLON); return MINUS_MINUS;
             } 
             // fall through
           case 184: break;
-          case 55: 
-            { return SHIFT_LEFT;
+          case 52: 
+            { return MINUS_ASSIGN;
             } 
             // fall through
           case 185: break;
-          case 56: 
-            { return LESS_OR_EQUAL;
+          case 53: 
+            { yybegin(MAYBE_SEMICOLON); return FLOAT;
             } 
             // fall through
           case 186: break;
-          case 57: 
-            { return SHIFT_RIGHT;
+          case 54: 
+            { return RANGE;
             } 
             // fall through
           case 187: break;
-          case 58: 
-            { return GREATER_OR_EQUAL;
+          case 55: 
+            { yybegin(MAYBE_SEMICOLON); return RAW_STRING;
             } 
             // fall through
           case 188: break;
-          case 59: 
-            { yybegin(MAYBE_SEMICOLON); return CHAR;
+          case 56: 
+            { return AS ;
             } 
             // fall through
           case 189: break;
-          case 60: 
-            { return COND_OR;
+          case 57: 
+            { return SEND_CHANNEL;
             } 
             // fall through
           case 190: break;
-          case 61: 
-            { return BIT_OR_ASSIGN;
+          case 58: 
+            { return SHIFT_LEFT;
             } 
             // fall through
           case 191: break;
-          case 62: 
-            { return HASH_LBRACK;
+          case 59: 
+            { return LESS_OR_EQUAL;
             } 
             // fall through
           case 192: break;
-          case 63: 
-            { return VAR_ASSIGN;
+          case 60: 
+            { return SHIFT_RIGHT;
             } 
             // fall through
           case 193: break;
-          case 64: 
-            { return EQ;
+          case 61: 
+            { return GREATER_OR_EQUAL;
             } 
             // fall through
           case 194: break;
-          case 65: 
-            { return NOT_EQ;
+          case 62: 
+            { yybegin(MAYBE_SEMICOLON); return CHAR;
             } 
             // fall through
           case 195: break;
-          case 66: 
-            { return PLUS_ASSIGN;
+          case 63: 
+            { return COND_OR;
             } 
             // fall through
           case 196: break;
-          case 67: 
-            { yybegin(MAYBE_SEMICOLON); return PLUS_PLUS;
+          case 64: 
+            { return BIT_OR_ASSIGN;
             } 
             // fall through
           case 197: break;
-          case 68: 
-            { return BIT_AND_ASSIGN;
+          case 65: 
+            { return HASH_LBRACK;
             } 
             // fall through
           case 198: break;
-          case 69: 
-            { return COND_AND;
+          case 66: 
+            { return VAR_ASSIGN;
             } 
             // fall through
           case 199: break;
-          case 70: 
-            { return BIT_CLEAR;
+          case 67: 
+            { return EQ;
             } 
             // fall through
           case 200: break;
-          case 71: 
-            { return BIT_XOR_ASSIGN;
+          case 68: 
+            { return NOT_EQ;
             } 
             // fall through
           case 201: break;
-          case 72: 
-            { return REMAINDER_ASSIGN;
+          case 69: 
+            { return PLUS_ASSIGN;
             } 
             // fall through
           case 202: break;
-          case 73: 
-            { return IN;
+          case 70: 
+            { yybegin(MAYBE_SEMICOLON); return PLUS_PLUS;
             } 
             // fall through
           case 203: break;
-          case 74: 
-            { return IF ;
+          case 71: 
+            { return BIT_AND_ASSIGN;
             } 
             // fall through
           case 204: break;
-          case 75: 
-            { return IS;
+          case 72: 
+            { return COND_AND;
             } 
             // fall through
           case 205: break;
-          case 76: 
-            { return FN;
+          case 73: 
+            { return BIT_CLEAR;
             } 
             // fall through
           case 206: break;
-          case 77: 
-            { return GO;
+          case 74: 
+            { return BIT_XOR_ASSIGN;
             } 
             // fall through
           case 207: break;
-          case 78: 
-            { yybegin(YYINITIAL); return WS;
+          case 75: 
+            { return REMAINDER_ASSIGN;
             } 
             // fall through
           case 208: break;
-          case 79: 
-            { yybegin(MAYBE_SEMICOLON); return STRING;
+          case 76: 
+            { return IN;
             } 
             // fall through
           case 209: break;
-          case 80: 
-            { return DOC_COMMENT;
+          case 77: 
+            { return IF ;
             } 
             // fall through
           case 210: break;
-          case 81: 
-            { yybegin(MAYBE_SEMICOLON); return HEX;
+          case 78: 
+            { return IS;
             } 
             // fall through
           case 211: break;
-          case 82: 
-            { yybegin(MAYBE_SEMICOLON); return OCT;
+          case 79: 
+            { return FN;
             } 
             // fall through
           case 212: break;
-          case 83: 
-            { yybegin(MAYBE_SEMICOLON); return BIN;
+          case 80: 
+            { return GO;
             } 
             // fall through
           case 213: break;
-          case 84: 
-            { yybegin(MAYBE_SEMICOLON); return FLOATI;
+          case 81: 
+            { yybegin(YYINITIAL); return WS;
             } 
             // fall through
           case 214: break;
-          case 85: 
-            { return TRIPLE_DOT;
+          case 82: 
+            { yybegin(MAYBE_SEMICOLON); return STRING;
             } 
             // fall through
           case 215: break;
-          case 86: 
-            { return IF_COMPILE_TIME ;
+          case 83: 
+            { return DOC_COMMENT;
             } 
             // fall through
           case 216: break;
-          case 87: 
-            { yybegin(ASM_BLOCK); return ASM;
+          case 84: 
+            { yybegin(MAYBE_SEMICOLON); return HEX;
             } 
             // fall through
           case 217: break;
-          case 88: 
-            { return SHIFT_LEFT_ASSIGN;
+          case 85: 
+            { yybegin(MAYBE_SEMICOLON); return OCT;
             } 
             // fall through
           case 218: break;
-          case 89: 
-            { return SHIFT_RIGHT_ASSIGN;
+          case 86: 
+            { yybegin(MAYBE_SEMICOLON); return BIN;
             } 
             // fall through
           case 219: break;
-          case 90: 
-            { yybegin(MAYBE_SEMICOLON); return BAD_CHARACTER;
+          case 87: 
+            { yybegin(MAYBE_SEMICOLON); return FLOATI;
             } 
             // fall through
           case 220: break;
-          case 91: 
-            { return BIT_CLEAR_ASSIGN;
+          case 88: 
+            { return TRIPLE_DOT;
             } 
             // fall through
           case 221: break;
-          case 92: 
-            { return FOR ;
+          case 89: 
+            { return IF_COMPILE_TIME ;
             } 
             // fall through
           case 222: break;
-          case 93: 
-            { yybegin(SQL_BLOCK); return SQL;
+          case 90: 
+            { yybegin(ASM_BLOCK); return ASM;
             } 
             // fall through
           case 223: break;
-          case 94: 
-            { return MUT;
+          case 91: 
+            { return SHIFT_LEFT_ASSIGN;
             } 
             // fall through
           case 224: break;
-          case 95: 
-            { return PUB;
+          case 92: 
+            { return SHIFT_RIGHT_ASSIGN;
             } 
             // fall through
           case 225: break;
-          case 96: 
-            { return FOR_COMPILE_TIME ;
+          case 93: 
+            { yybegin(MAYBE_SEMICOLON); return BAD_CHARACTER;
             } 
             // fall through
           case 226: break;
-          case 97: 
-            { return CHAN;
+          case 94: 
+            { return BIT_CLEAR_ASSIGN;
             } 
             // fall through
           case 227: break;
-          case 98: 
-            { return ENUM;
+          case 95: 
+            { return FOR ;
             } 
             // fall through
           case 228: break;
-          case 99: 
-            { return ELSE;
+          case 96: 
+            { yybegin(SQL_BLOCK); return SQL;
             } 
             // fall through
           case 229: break;
-          case 100: 
-            { return NOT_IN;
+          case 97: 
+            { return MUT;
             } 
             // fall through
           case 230: break;
-          case 101: 
-            { return NOT_IS;
+          case 98: 
+            { return PUB;
             } 
             // fall through
           case 231: break;
-          case 102: 
-            { return LOCK;
+          case 99: 
+            { return FOR_COMPILE_TIME ;
             } 
             // fall through
           case 232: break;
-          case 103: 
-            { return GOTO;
+          case 100: 
+            { return CHAN;
             } 
             // fall through
           case 233: break;
-          case 104: 
-            { yybegin(MAYBE_SEMICOLON); return TRUE;
+          case 101: 
+            { return ENUM;
             } 
             // fall through
           case 234: break;
-          case 105: 
-            { return TYPE_;
+          case 102: 
+            { return ELSE;
             } 
             // fall through
           case 235: break;
-          case 106: 
-            { yybegin(MAYBE_SEMICOLON); return BREAK;
+          case 103: 
+            { return NOT_IN;
             } 
             // fall through
           case 236: break;
-          case 107: 
-            { return ELSE_COMPILE_TIME ;
+          case 104: 
+            { return NOT_IS;
             } 
             // fall through
           case 237: break;
-          case 108: 
-            { return RLOCK;
+          case 105: 
+            { return LOCK;
             } 
             // fall through
           case 238: break;
-          case 109: 
-            { return CONST;
+          case 106: 
+            { return GOTO;
             } 
             // fall through
           case 239: break;
-          case 110: 
-            { return UNION;
+          case 107: 
+            { yybegin(MAYBE_SEMICOLON); return TRUE;
             } 
             // fall through
           case 240: break;
-          case 111: 
-            { yybegin(C_FLAG_VALUE_EXPECTED); return C_FLAG;
+          case 108: 
+            { return TYPE_;
             } 
             // fall through
           case 241: break;
-          case 112: 
-            { return DEFER;
+          case 109: 
+            { yybegin(MAYBE_SEMICOLON); return BREAK;
             } 
             // fall through
           case 242: break;
-          case 113: 
-            { yybegin(MAYBE_SEMICOLON); return FALSE;
+          case 110: 
+            { return ELSE_COMPILE_TIME ;
             } 
             // fall through
           case 243: break;
-          case 114: 
-            { return MATCH ;
+          case 111: 
+            { return RLOCK;
             } 
             // fall through
           case 244: break;
-          case 115: 
-            { yybegin(MAYBE_SEMICOLON); return RETURN ;
+          case 112: 
+            { return CONST;
             } 
             // fall through
           case 245: break;
-          case 116: 
-            { return ASSERT;
+          case 113: 
+            { return UNION;
             } 
             // fall through
           case 246: break;
-          case 117: 
-            { return UNSAFE;
+          case 114: 
+            { yybegin(C_FLAG_VALUE_EXPECTED); return C_FLAG;
             } 
             // fall through
           case 247: break;
-          case 118: 
-            { return IMPORT ;
+          case 115: 
+            { return DEFER;
             } 
             // fall through
           case 248: break;
-          case 119: 
-            { return SELECT;
+          case 116: 
+            { yybegin(MAYBE_SEMICOLON); return FALSE;
             } 
             // fall through
           case 249: break;
-          case 120: 
-            { return STRUCT;
+          case 117: 
+            { return MATCH ;
             } 
             // fall through
           case 250: break;
-          case 121: 
-            { return SHARED;
+          case 118: 
+            { yybegin(MAYBE_SEMICOLON); return RETURN ;
             } 
             // fall through
           case 251: break;
-          case 122: 
-            { return SWITCH;
+          case 119: 
+            { return ASSERT;
             } 
             // fall through
           case 252: break;
-          case 123: 
-            { return MODULE;
+          case 120: 
+            { return UNSAFE;
             } 
             // fall through
           case 253: break;
-          case 124: 
-            { return DEFAULT;
+          case 121: 
+            { return IMPORT ;
             } 
             // fall through
           case 254: break;
-          case 125: 
-            { return BUILTIN_GLOBAL;
+          case 122: 
+            { return SELECT;
             } 
             // fall through
           case 255: break;
-          case 126: 
-            { yybegin(MAYBE_SEMICOLON); return CONTINUE ;
+          case 123: 
+            { return STRUCT;
             } 
             // fall through
           case 256: break;
-          case 127: 
-            { return VOLATILE;
+          case 124: 
+            { return SHARED;
             } 
             // fall through
           case 257: break;
-          case 128: 
-            { yybegin(C_STRING_LITERAL); return C_INCLUDE;
+          case 125: 
+            { return SWITCH;
             } 
             // fall through
           case 258: break;
-          case 129: 
-            { return INTERFACE;
+          case 126: 
+            { return MODULE;
             } 
             // fall through
           case 259: break;
-          case 130: 
-            { yybegin(MAYBE_SEMICOLON); return FALLTHROUGH;
+          case 127: 
+            { return DEFAULT;
             } 
             // fall through
           case 260: break;
+          case 128: 
+            { return BUILTIN_GLOBAL;
+            } 
+            // fall through
+          case 261: break;
+          case 129: 
+            { yybegin(MAYBE_SEMICOLON); return CONTINUE ;
+            } 
+            // fall through
+          case 262: break;
+          case 130: 
+            { return VOLATILE;
+            } 
+            // fall through
+          case 263: break;
+          case 131: 
+            { yybegin(C_STRING_LITERAL); return C_INCLUDE;
+            } 
+            // fall through
+          case 264: break;
+          case 132: 
+            { return INTERFACE;
+            } 
+            // fall through
+          case 265: break;
+          case 133: 
+            { yybegin(MAYBE_SEMICOLON); return FALLTHROUGH;
+            } 
+            // fall through
+          case 266: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }

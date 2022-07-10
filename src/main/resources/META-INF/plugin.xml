@@ -11,6 +11,33 @@ Vlang is a language plugin for IntelliJ IDEA that adds support for V language.
     <depends>com.intellij.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <!-- V Mod File -->
+        <fileType name="vmod"
+                  implementationClass="org.vlang.lang.vmod.VmodFileType"
+                  fieldName="INSTANCE"
+                  language="vmod"
+                  fileNames="v.mod"/>
+
+        <lang.parserDefinition language="vmod"
+                               implementationClass="org.vlang.lang.vmod.VmodParserDefinition"/>
+
+        <lang.syntaxHighlighterFactory language="vmod"
+                                       implementationClass="org.vlang.lang.vmod.VmodSyntaxHighlighterFactory"/>
+
+        <lang.commenter language="vmod" implementationClass="org.vlang.lang.vmod.VmodCommenter"/>
+
+        <lang.braceMatcher language="vmod"
+                           implementationClass="org.vlang.lang.vmod.VmodBraceMatcher"/>
+
+        <lang.quoteHandler language="vmod"
+                           implementationClass="org.vlang.lang.vmod.VmodQuoteHandler"/>
+
+        <annotator language="vmod" order="first" id="org.vlang.lang.vmod.annotator.VmodAnnotator"
+                   implementationClass="org.vlang.lang.vmod.annotator.VmodAnnotator"/>
+
+        <completion.contributor language="vmod"
+                                implementationClass="org.vlang.lang.vmod.completion.VmodCompletionContributor"/>
+
         <fileType name="vlang"
                   implementationClass="org.vlang.lang.VlangFileType"
                   fieldName="INSTANCE"
@@ -20,10 +47,10 @@ Vlang is a language plugin for IntelliJ IDEA that adds support for V language.
         <lang.parserDefinition language="vlang"
                                implementationClass="org.vlang.lang.VlangParserDefinition"/>
 
-        <lang.commenter language="vlang" implementationClass="org.vlang.lang.VlangCommenter"/>
-
         <lang.syntaxHighlighterFactory language="vlang"
                                        implementationClass="org.vlang.lang.VlangSyntaxHighlighterFactory"/>
+
+        <lang.commenter language="vlang" implementationClass="org.vlang.lang.VlangCommenter"/>
 
         <stubIndex implementation="org.vlang.lang.stubs.index.VlangPackagesIndex"/>
         <stubIndex implementation="org.vlang.lang.stubs.index.VlangFunctionIndex"/>

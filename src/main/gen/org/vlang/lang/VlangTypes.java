@@ -167,6 +167,7 @@ public interface VlangTypes {
   IElementType ASSERT = new VlangTokenType("assert");
   IElementType ASSIGN = new VlangTokenType("=");
   IElementType AT = new VlangTokenType("@");
+  IElementType BACKTICK = new VlangTokenType("`");
   IElementType BIN = new VlangTokenType("bin");
   IElementType BIT_AND = new VlangTokenType("&");
   IElementType BIT_AND_ASSIGN = new VlangTokenType("&=");
@@ -194,6 +195,7 @@ public interface VlangTypes {
   IElementType DEFAULT = new VlangTokenType("default");
   IElementType DEFER = new VlangTokenType("defer");
   IElementType DOT = new VlangTokenType(".");
+  IElementType DOUBLE_QUOTE = new VlangTokenType("\"");
   IElementType ELSE = new VlangTokenType("else");
   IElementType ELSE_COMPILE_TIME = new VlangTokenType("ELSE_COMPILE_TIME");
   IElementType ENUM = new VlangTokenType("enum");
@@ -266,6 +268,7 @@ public interface VlangTypes {
   IElementType SHIFT_LEFT_ASSIGN = new VlangTokenType("<<=");
   IElementType SHIFT_RIGHT = new VlangTokenType(">>");
   IElementType SHIFT_RIGHT_ASSIGN = new VlangTokenType(">>=");
+  IElementType SINGLE_QUOTE = new VlangTokenType("'");
   IElementType SQL = new VlangTokenType("sql");
   IElementType SQL_LINE = new VlangTokenType("SQL_LINE");
   IElementType STRING = new VlangTokenType("string");

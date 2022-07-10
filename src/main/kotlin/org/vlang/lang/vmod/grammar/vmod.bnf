@@ -1,0 +1,54 @@
+{
+  parserClass='org.vlang.lang.vmod.VmodParser'
+
+  implements='org.vlang.lang.vmod.psi.VmodCompositeElement'
+  extends='org.vlang.lang.vmod.psi.impl.VmodCompositeElementImpl'
+
+  elementTypeHolderClass='org.vlang.lang.vmod.VmodTypes'
+  elementTypeClass='org.vlang.lang.vmod.psi.VmodCompositeElementType'
+  tokenTypeClass='org.vlang.lang.vmod.psi.VmodTokenType'
+//  psiTreeUtilClass='org.vlang.lang.psi.VlangPsiTreeUtil'
+
+  psiClassPrefix='Vmod'
+  psiImplClassSuffix='Impl'
+  psiPackage='org.vlang.lang.vmod.psi'
+  psiImplPackage='org.vlang.lang.vmod.psi.impl'
+//  psiImplUtilClass="org.vlang.lang.psi.impl.VlangPsiImplUtil"
+//  parserUtilClass="org.vlang.lang.VlangParserUtil"
+
+  tokens=[
+    LBRACE               =  '{'
+    RBRACE               =  '}'
+    LBRACK               =  '['
+    RBRACK               =  ']'
+    LPAREN               =  '('
+    RPAREN               =  ')'
+    COLON                =  ':'
+    COMMA                =  ','
+    SINGLE_QUOTE         =  "'"
+    SEMICOLON_SYNTHETIC  = '<NL>'
+  ]
+
+  generateTokenAccessors=true
+}
+
+File ::= ModuleDeclaration
+
+ModuleDeclaration ::= module '{' Fields? semi '}'
+
+Fields ::= Field (semi Field)* {pin=2}
+
+Field ::= FieldName ':' Expression
+
+FieldName ::= identifier
+
+Expression ::= string | Array
+
+Array ::= '[' ArrayItems? ']'
+
+ArrayItems ::= ArrayItem (',' ArrayItem)*
+
+ArrayItem ::= string
+
+// General rule for explicit and implicit ';'
+private semi ::= '<NL>' | ';' | <<eof>>
