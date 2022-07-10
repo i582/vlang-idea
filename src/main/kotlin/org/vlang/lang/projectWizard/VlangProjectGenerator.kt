@@ -7,7 +7,7 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.roots.ModifiableModelsProvider
 import com.intellij.openapi.roots.ModifiableRootModel
 import com.intellij.openapi.vfs.VirtualFile
-import org.vlang.lang.ui.PluginIcons
+import org.vlang.ide.ui.PluginIcons
 import javax.swing.Icon
 
 //class VlangProjectWizardData(val dartSdkPath: String, val template: VlangProjectTemplate)

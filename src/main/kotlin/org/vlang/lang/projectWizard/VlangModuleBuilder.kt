@@ -15,7 +15,7 @@ import com.intellij.openapi.startup.StartupManager
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.ui.components.JBTextField
 import com.intellij.ui.dsl.builder.Panel
-import org.vlang.lang.ui.PluginIcons
+import org.vlang.ide.ui.PluginIcons
 import java.io.IOException
 import javax.swing.JComponent
 import javax.swing.JLabel
