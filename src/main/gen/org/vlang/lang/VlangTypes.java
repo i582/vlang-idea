@@ -63,6 +63,7 @@ public interface VlangTypes {
   IElementType FIELD_INITIALIZATION_VALUE_LIST = new VlangCompositeElementType("FIELD_INITIALIZATION_VALUE_LIST");
   IElementType FIELD_LOOKUP = new VlangCompositeElementType("FIELD_LOOKUP");
   IElementType FIELD_NAME = new VlangCompositeElementType("FIELD_NAME");
+  IElementType FORCE_NO_ERROR_PROPAGATION_EXPRESSION = new VlangCompositeElementType("FORCE_NO_ERROR_PROPAGATION_EXPRESSION");
   IElementType FOR_CLAUSE = new VlangCompositeElementType("FOR_CLAUSE");
   IElementType FOR_STATEMENT = new VlangCompositeElementType("FOR_STATEMENT");
   IElementType FUNCTION_DECLARATION = VlangElementTypeFactory.stubFactory("FUNCTION_DECLARATION");
@@ -116,6 +117,7 @@ public interface VlangTypes {
   IElementType MUT_EXPRESSION = new VlangCompositeElementType("MUT_EXPRESSION");
   IElementType NOT_IN_EXPRESSION = new VlangCompositeElementType("NOT_IN_EXPRESSION");
   IElementType NOT_IS_EXPRESSION = new VlangCompositeElementType("NOT_IS_EXPRESSION");
+  IElementType NOT_NULLABLE_TYPE = new VlangCompositeElementType("NOT_NULLABLE_TYPE");
   IElementType NULLABLE_TYPE = new VlangCompositeElementType("NULLABLE_TYPE");
   IElementType OR_BLOCK_EXPR = new VlangCompositeElementType("OR_BLOCK_EXPR");
   IElementType OR_EXPR = new VlangCompositeElementType("OR_EXPR");
@@ -167,6 +169,7 @@ public interface VlangTypes {
   IElementType ASSERT = new VlangTokenType("assert");
   IElementType ASSIGN = new VlangTokenType("=");
   IElementType AT = new VlangTokenType("@");
+  IElementType BACKTICK = new VlangTokenType("`");
   IElementType BIN = new VlangTokenType("bin");
   IElementType BIT_AND = new VlangTokenType("&");
   IElementType BIT_AND_ASSIGN = new VlangTokenType("&=");
@@ -194,6 +197,7 @@ public interface VlangTypes {
   IElementType DEFAULT = new VlangTokenType("default");
   IElementType DEFER = new VlangTokenType("defer");
   IElementType DOT = new VlangTokenType(".");
+  IElementType DOUBLE_QUOTE = new VlangTokenType("\"");
   IElementType ELSE = new VlangTokenType("else");
   IElementType ELSE_COMPILE_TIME = new VlangTokenType("ELSE_COMPILE_TIME");
   IElementType ENUM = new VlangTokenType("enum");
@@ -266,6 +270,7 @@ public interface VlangTypes {
   IElementType SHIFT_LEFT_ASSIGN = new VlangTokenType("<<=");
   IElementType SHIFT_RIGHT = new VlangTokenType(">>");
   IElementType SHIFT_RIGHT_ASSIGN = new VlangTokenType(">>=");
+  IElementType SINGLE_QUOTE = new VlangTokenType("'");
   IElementType SQL = new VlangTokenType("sql");
   IElementType SQL_LINE = new VlangTokenType("SQL_LINE");
   IElementType STRING = new VlangTokenType("string");
@@ -437,6 +442,9 @@ public interface VlangTypes {
       else if (type == FIELD_NAME) {
         return new VlangFieldNameImpl(node);
       }
+      else if (type == FORCE_NO_ERROR_PROPAGATION_EXPRESSION) {
+        return new VlangForceNoErrorPropagationExpressionImpl(node);
+      }
       else if (type == FOR_CLAUSE) {
         return new VlangForClauseImpl(node);
       }
@@ -595,6 +603,9 @@ public interface VlangTypes {
       }
       else if (type == NOT_IS_EXPRESSION) {
         return new VlangNotIsExpressionImpl(node);
+      }
+      else if (type == NOT_NULLABLE_TYPE) {
+        return new VlangNotNullableTypeImpl(node);
       }
       else if (type == NULLABLE_TYPE) {
         return new VlangNullableTypeImpl(node);

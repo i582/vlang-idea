@@ -5,15 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface VlangAsExpression extends VlangExpression {
+public interface VlangNotNullableType extends VlangTypeDecl {
 
   @NotNull
-  VlangExpression getExpression();
-
-  @Nullable
-  VlangTypeDecl getTypeDecl();
-
-  @NotNull
-  PsiElement getAs();
+  PsiElement getNot();
 
 }

@@ -96,6 +96,8 @@ C_STRING_ANGLE = {STR_ANGLE_OPEN} ([^\<\>\\\n\r])* {STR_ANGLE_CLOSE}
 "`" [^\\] "`"?                            { yybegin(MAYBE_SEMICOLON); return CHAR; }
 "`" \n "`"?                               { yybegin(MAYBE_SEMICOLON); return CHAR; }
 "`\\" [abfnrtv\\\`] "`"?                  { yybegin(MAYBE_SEMICOLON); return CHAR; }
+"`\\\"`"                                  { yybegin(MAYBE_SEMICOLON); return CHAR; }
+"`\\'`"                                   { yybegin(MAYBE_SEMICOLON); return CHAR; }
 
 // \141`, `\342\230\205`
 "`" ("\\" {OCT_DIGIT} {3}) {1,3} "`"?     { yybegin(MAYBE_SEMICOLON); return CHAR; }
@@ -174,6 +176,10 @@ C_STRING_ANGLE = {STR_ANGLE_OPEN} ([^\<\>\\\n\r])* {STR_ANGLE_CLOSE}
 ">>"                                      { return SHIFT_RIGHT; }
 ">="                                      { return GREATER_OR_EQUAL; }
 ">"                                       { yybegin(MAYBE_SEMICOLON); return GREATER; }
+
+"'"                                       { return SINGLE_QUOTE; }
+"\""                                      { return DOUBLE_QUOTE; }
+"`"                                       { return BACKTICK; }
 
 ":="                                      { return VAR_ASSIGN; }
 

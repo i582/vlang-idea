@@ -226,6 +226,10 @@ public class VlangVisitor extends PsiElementVisitor {
     visitStatement(o);
   }
 
+  public void visitForceNoErrorPropagationExpression(@NotNull VlangForceNoErrorPropagationExpression o) {
+    visitExpression(o);
+  }
+
   public void visitFunctionDeclaration(@NotNull VlangFunctionDeclaration o) {
     visitFunctionOrMethodDeclaration(o);
   }
@@ -428,6 +432,10 @@ public class VlangVisitor extends PsiElementVisitor {
 
   public void visitNotIsExpression(@NotNull VlangNotIsExpression o) {
     visitExpression(o);
+  }
+
+  public void visitNotNullableType(@NotNull VlangNotNullableType o) {
+    visitTypeDecl(o);
   }
 
   public void visitNullableType(@NotNull VlangNullableType o) {

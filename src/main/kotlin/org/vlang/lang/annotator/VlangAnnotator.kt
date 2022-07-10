@@ -8,6 +8,7 @@ import com.intellij.openapi.editor.colors.TextAttributesKey
 import com.intellij.psi.PsiElement
 import com.intellij.psi.util.elementType
 import com.intellij.psi.util.findParentOfType
+import org.vlang.ide.highlight.VlangHighlightingData
 import org.vlang.lang.VlangParserDefinition
 import org.vlang.lang.VlangTypes
 import org.vlang.lang.psi.*

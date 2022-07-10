@@ -10,15 +10,15 @@ import org.vlang.lang.psi.VlangPsiTreeUtil;
 import static org.vlang.lang.VlangTypes.*;
 import org.vlang.lang.psi.*;
 
-public class VlangAsExpressionImpl extends VlangExpressionImpl implements VlangAsExpression {
+public class VlangNotNullableTypeImpl extends VlangTypeDeclImpl implements VlangNotNullableType {
 
-  public VlangAsExpressionImpl(@NotNull ASTNode node) {
+  public VlangNotNullableTypeImpl(@NotNull ASTNode node) {
     super(node);
   }
 
   @Override
   public void accept(@NotNull VlangVisitor visitor) {
-    visitor.visitAsExpression(this);
+    visitor.visitNotNullableType(this);
   }
 
   @Override
@@ -29,20 +29,8 @@ public class VlangAsExpressionImpl extends VlangExpressionImpl implements VlangA
 
   @Override
   @NotNull
-  public VlangExpression getExpression() {
-    return notNullChild(VlangPsiTreeUtil.getChildOfType(this, VlangExpression.class));
-  }
-
-  @Override
-  @Nullable
-  public VlangTypeDecl getTypeDecl() {
-    return VlangPsiTreeUtil.getChildOfType(this, VlangTypeDecl.class);
-  }
-
-  @Override
-  @NotNull
-  public PsiElement getAs() {
-    return notNullChild(findChildByType(AS));
+  public PsiElement getNot() {
+    return notNullChild(findChildByType(NOT));
   }
 
 }

@@ -15,7 +15,7 @@ import org.vlang.lang.psi.impl.VlangPsiImplUtil
 import org.vlang.lang.stubs.VlangFileStub
 import org.vlang.lang.stubs.types.VlangFunctionDeclarationStubElementType
 import org.vlang.lang.stubs.types.VlangMethodDeclarationStubElementType
-import org.vlang.lang.ui.PluginIcons
+import org.vlang.ide.ui.PluginIcons
 
 class VlangFile(viewProvider: FileViewProvider) :
     PsiFileBase(viewProvider, VlangLanguage.INSTANCE), PsiImportHolder, PsiClassOwner {

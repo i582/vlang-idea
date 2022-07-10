@@ -11,7 +11,8 @@ Vlang is a language plugin for IntelliJ IDEA that adds support for V language.
     <depends>com.intellij.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileType name="vlang"
+        <!-- V File -->
+        <fileType name="V"
                   implementationClass="org.vlang.lang.VlangFileType"
                   fieldName="INSTANCE"
                   language="vlang"
@@ -20,10 +21,20 @@ Vlang is a language plugin for IntelliJ IDEA that adds support for V language.
         <lang.parserDefinition language="vlang"
                                implementationClass="org.vlang.lang.VlangParserDefinition"/>
 
-        <lang.commenter language="vlang" implementationClass="org.vlang.lang.VlangCommenter"/>
-
         <lang.syntaxHighlighterFactory language="vlang"
                                        implementationClass="org.vlang.lang.VlangSyntaxHighlighterFactory"/>
+
+        <lang.commenter language="vlang" implementationClass="org.vlang.lang.VlangCommenter"/>
+
+        <lang.braceMatcher language="vlang"
+                           implementationClass="org.vlang.lang.VlangBraceMatcher"/>
+
+        <lang.quoteHandler language="vlang"
+                           implementationClass="org.vlang.lang.VlangQuoteHandler"/>
+
+        <lang.foldingBuilder
+          language="vlang"
+          implementationClass="org.vlang.lang.folding.VlangFoldingBuilder"/>
 
         <stubIndex implementation="org.vlang.lang.stubs.index.VlangPackagesIndex"/>
         <stubIndex implementation="org.vlang.lang.stubs.index.VlangFunctionIndex"/>
@@ -41,54 +52,65 @@ Vlang is a language plugin for IntelliJ IDEA that adds support for V language.
         <localInspection language="vlang" groupName="Vlang plugin" shortName="KphpUndefinedClassInspection"
                          displayName="Undefined function"
                          enabledByDefault="true" level="ERROR"
-                         implementationClass="org.vlang.lang.inspections.VlangUndefinedFunctionInspection"/>
+                         implementationClass="org.vlang.ide.inspections.VlangUndefinedFunctionInspection"/>
 
         <runLineMarkerContributor id="VlangRunLineMarkerProvider" language="vlang"
-                                  implementationClass="org.vlang.lang.configuration.run.VlangRunLineMarkerProvider"/>
-
-        <!-- Run V script Configuration -->
-        <configurationType implementation="org.vlang.lang.configuration.run.VlangRunConfigurationType"/>
-        <runConfigurationProducer
-          implementation="org.vlang.lang.configuration.run.VlangRunConfigurationProducer"/>
+                                  implementationClass="org.vlang.ide.run.VlangRunLineMarkerProvider"/>
 
         <completion.contributor
           language="vlang"
           implementationClass="org.vlang.lang.completion.VlangCompletionContributor"/>
 
-        <lang.braceMatcher language="vlang"
-                           implementationClass="org.vlang.lang.VlangBraceMatcher"/>
-
-        <lang.quoteHandler language="vlang"
-                           implementationClass="org.vlang.lang.VlangQuoteHandler"/>
-
         <formattingService implementation="org.vlang.lang.formatting.VlangFormattingService"/>
 
-        <notificationGroup id="VlangNotifications" displayType="BALLOON"/>
+        <colorSettingsPage implementation="org.vlang.ide.highlight.VlangColorsAndFontsPage"/>
+        <!-- End of V File -->
 
-        <lang.foldingBuilder
-          language="vlang"
-          implementationClass="org.vlang.lang.folding.VlangFoldingBuilder"/>
+        <!-- Run V script Configuration -->
+        <configurationType implementation="org.vlang.ide.run.VlangRunConfigurationType"/>
+        <runConfigurationProducer
+          implementation="org.vlang.ide.run.VlangRunConfigurationProducer"/>
+
+        <!-- V Mod File -->
+        <fileType name="V Module"
+                  implementationClass="org.vlang.vmod.VmodFileType"
+                  fieldName="INSTANCE"
+                  language="vmod"
+                  fileNames="v.mod"/>
+
+        <lang.parserDefinition language="vmod"
+                               implementationClass="org.vlang.vmod.VmodParserDefinition"/>
+
+        <lang.syntaxHighlighterFactory language="vmod"
+                                       implementationClass="org.vlang.vmod.VmodSyntaxHighlighterFactory"/>
+
+        <lang.commenter language="vmod" implementationClass="org.vlang.vmod.VmodCommenter"/>
+
+        <lang.braceMatcher language="vmod"
+                           implementationClass="org.vlang.vmod.VmodBraceMatcher"/>
+
+        <lang.quoteHandler language="vmod"
+                           implementationClass="org.vlang.vmod.VmodQuoteHandler"/>
+
+        <annotator language="vmod" order="first" id="org.vlang.vmod.annotator.VmodAnnotator"
+                   implementationClass="org.vlang.vmod.annotator.VmodAnnotator"/>
+
+        <completion.contributor language="vmod"
+                                implementationClass="org.vlang.vmod.completion.VmodCompletionContributor"/>
+        <!-- End of V Mod File -->
+
+        <!-- Others -->
+        <notificationGroup id="VlangNotifications" displayType="BALLOON"/>
 
         <additionalTextAttributes scheme="Default" file="colorSchemes/VlangAddonsDefault.xml"/>
         <additionalTextAttributes scheme="Darcula" file="colorSchemes/VlangAddonsDarcula.xml"/>
 
         <defaultLiveTemplates file="/liveTemplates/V.xml"/>
-        <liveTemplateContext implementation="org.vlang.lang.templates.VlangLiveTemplateContext"/>
-
-        <lang.documentationProvider language="vlang" order="first"
-                                    implementationClass="org.vlang.lang.documentation.VlangDocumentProvider"/>
-
-<!--        <moduleType-->
-<!--          id="VLANG_MODULE_TYPE"-->
-<!--          implementationClass="org.vlang.lang.projectWizard.VlangModuleType" order="first"/>-->
-
-        <moduleBuilder builderClass="org.vlang.lang.projectWizard.VlangModuleBuilder"
-                       id="VLANG"
-                       order="first"/>
+        <liveTemplateContext implementation="org.vlang.ide.templates.VlangLiveTemplateContext"/>
     </extensions>
 
     <actions>
-        <action id="vlang.new.file" class="org.vlang.lang.actions.CreateVlangFileAction">
+        <action id="vlang.new.file" class="org.vlang.ide.actions.CreateVlangFileAction">
             <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
         </action>
     </actions>

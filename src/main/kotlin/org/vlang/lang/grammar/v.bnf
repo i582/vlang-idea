@@ -70,6 +70,9 @@
     DOT                  =  '.'
     RANGE                =  '..'
     TILDA                =  '~'
+    SINGLE_QUOTE         =  "'"
+    DOUBLE_QUOTE         =  '"'
+    BACKTICK             =  '`'
     SEMICOLON_SYNTHETIC  = '<NL>'
     TYPE_                = 'type'
     raw_string           = 'raw_string'
@@ -77,7 +80,7 @@
   ]
 
   extends("(Or|And|Add|Conversion|Mul|Selector|Conditional|OrBlock)Expr")=BinaryExpr
-  extends(".*(Expr|Literal|Lit|OperandName)|TypeInitExpr|MapInitExpr|UnsafeExpression|CompileTimeIfExpression|IfExpression|ArrayCreation|InExpression|NotInExpression|MatchExpression|EnumFetch|MutExpression|SharedExpression|DotExpression|IsExpression|NotIsExpression|AsExpression|UnpackingExpression|ErrorPropagationExpression|ConstexprIdentifierExpression|SqlExpression|GoExpression|LockExpression|IncDecExpression")=Expression
+  extends(".*(Expr|Literal|Lit|OperandName)|TypeInitExpr|MapInitExpr|UnsafeExpression|CompileTimeIfExpression|IfExpression|ArrayCreation|InExpression|NotInExpression|MatchExpression|EnumFetch|MutExpression|SharedExpression|DotExpression|IsExpression|NotIsExpression|AsExpression|UnpackingExpression|ErrorPropagationExpression|ForceNoErrorPropagationExpression|ConstexprIdentifierExpression|SqlExpression|GoExpression|LockExpression|IncDecExpression")=Expression
 
   implements("(Type|Import)Spec|(Var|Const|Param|Field|Label)Definition|(Struct|TypeAlias|Union|Enum)Declaration|Receiver")="org.vlang.lang.psi.VlangNamedElement"
 //  implements("FunctionLit")="org.vlang.lang.psi.GoSignatureOwner"
@@ -508,6 +511,7 @@ Expression ::=
   | SharedExpression
   | DotExpression
   | ErrorPropagationExpression
+  | ForceNoErrorPropagationExpression
   | ConstexprIdentifierExpression
   | SqlExpression
   | MapInitExpr
@@ -573,6 +577,7 @@ private TypeLit ::=
     ArrayOrSliceType
   | PointerType
   | NullableType
+  | NotNullableType
   | FunctionType
   | MapType
   | ChannelType
@@ -586,6 +591,9 @@ ArrayOrSliceType ::= '[' Expression? ']' TypeDecl {pin=1}
 // &&<type>
 // &&&<type>
 PointerType ::= ('&' | '&&')+ TypeDecl {pin=1}
+// !<type>
+// bare !
+NotNullableType ::= '!' TypeDecl? {pin=1}
 // ?<type>
 // bare ?
 NullableType ::= '?' TypeDecl? {pin=1}
@@ -694,6 +702,9 @@ ConstexprIdentifierExpression ::= '@' identifier {pin=2}
 // <expr>?
 ErrorPropagationExpression ::= Expression '?' {pin=1}
 
+// <expr>!
+ForceNoErrorPropagationExpression ::= Expression '!' {pin=1}
+
 // ...<expr>
 UnpackingExpression ::= '...' Expression {pin=1}
 
@@ -756,7 +767,7 @@ IsExpression ::= Expression is Expression {pin=2}
 NotIsExpression ::= Expression NOT_IS Expression {pin=2}
 
 // <expr> as <expr>
-AsExpression ::= Expression as Expression {pin=2}
+AsExpression ::= Expression as TypeDecl {pin=2}
 
 // unsafe { ... }
 UnsafeExpression ::= unsafe Block {pin=1}
