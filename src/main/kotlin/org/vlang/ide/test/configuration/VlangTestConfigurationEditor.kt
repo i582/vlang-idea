@@ -1,4 +1,4 @@
-package org.vlang.ide.run
+package org.vlang.ide.test.configuration
 
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory
 import com.intellij.openapi.options.SettingsEditor
@@ -6,29 +6,30 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.DialogPanel
 import com.intellij.ui.dsl.builder.*
 import com.intellij.ui.dsl.gridLayout.HorizontalAlign
+import org.vlang.ide.run.VlangRunConfiguration
 import javax.swing.JComponent
 import javax.swing.JPanel
 
-open class VlangRunConfigurationEditor(private val project: Project) : SettingsEditor<VlangRunConfiguration>() {
+open class VlangTestConfigurationEditor(private val project: Project) : SettingsEditor<VlangTestConfiguration>() {
     data class Model(
-        var scriptName: String = "",
+        var testFile: String = "",
         var additionalParameters: String = "",
     )
 
     private lateinit var mainPanel: DialogPanel
     private val model = Model()
 
-    override fun resetEditorFrom(demoRunConfiguration: VlangRunConfiguration) {
-        model.scriptName = demoRunConfiguration.scriptName
+    override fun resetEditorFrom(demoRunConfiguration: VlangTestConfiguration) {
+        model.testFile = demoRunConfiguration.testFile
         model.additionalParameters = demoRunConfiguration.additionalParameters
 
         mainPanel.reset()
     }
 
-    override fun applyEditorTo(demoRunConfiguration: VlangRunConfiguration) {
+    override fun applyEditorTo(demoRunConfiguration: VlangTestConfiguration) {
         mainPanel.apply()
 
-        demoRunConfiguration.scriptName = model.scriptName
+        demoRunConfiguration.testFile = model.testFile
         demoRunConfiguration.additionalParameters = model.additionalParameters
     }
 
@@ -36,14 +37,14 @@ open class VlangRunConfigurationEditor(private val project: Project) : SettingsE
 
     private fun component(): JPanel {
         mainPanel = panel {
-            row("Script name:") {
+            row("Test file:") {
                 textFieldWithBrowseButton(
-                    "Select V script name",
+                    "Select V test name",
                     project,
                     FileChooserDescriptorFactory.createSingleFileDescriptor()
                 )
                     .horizontalAlign(HorizontalAlign.FILL)
-                    .bindText(model::scriptName)
+                    .bindText(model::testFile)
             }.bottomGap(BottomGap.SMALL)
 
             row("Additional parameters:") {

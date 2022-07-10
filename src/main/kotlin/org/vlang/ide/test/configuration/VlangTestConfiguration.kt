@@ -1,4 +1,4 @@
-package org.vlang.ide.run
+package org.vlang.ide.test.configuration
 
 import com.intellij.execution.Executor
 import com.intellij.execution.configurations.ConfigurationFactory
@@ -8,15 +8,21 @@ import com.intellij.execution.runners.ExecutionEnvironment
 import com.intellij.openapi.project.Project
 import org.jdom.Element
 
-open class VlangRunConfiguration(project: Project, factory: ConfigurationFactory?, name: String?) :
-    RunConfigurationBase<VlangRunConfigurationOptions?>(project, factory, name) {
+open class VlangTestConfiguration(project: Project, factory: ConfigurationFactory?, name: String?) :
+    RunConfigurationBase<VlangTestConfigurationOptions?>(project, factory, name) {
 
-    override fun getOptions() = super.getOptions() as VlangRunConfigurationOptions
+    override fun getOptions() = super.getOptions() as VlangTestConfigurationOptions
 
-    var scriptName: String
-        get() = options.scriptName
+    var testFile: String
+        get() = options.testName
         set(value) {
-            options.scriptName = value
+            options.testName = value
+        }
+
+    var testModule: String
+        get() = options.testModule
+        set(value) {
+            options.testModule = value
         }
 
     var additionalParameters: String
@@ -27,24 +33,26 @@ open class VlangRunConfiguration(project: Project, factory: ConfigurationFactory
 
     override fun writeExternal(element: Element) {
         super.writeExternal(element)
-        element.writeString("scriptName", scriptName)
+        element.writeString("testFile", testFile)
+        element.writeString("testModule", testFile)
         element.writeString("additionalParameters", additionalParameters)
     }
 
     override fun readExternal(element: Element) {
         super.readExternal(element)
-        element.readString("scriptName")?.let { scriptName = it }
+        element.readString("testFile")?.let { testFile = it }
+        element.readString("testModule")?.let { testFile = it }
         element.readString("additionalParameters")?.let { additionalParameters = it }
     }
 
-    override fun getConfigurationEditor() = VlangRunConfigurationEditor(project)
+    override fun getConfigurationEditor() = VlangTestConfigurationEditor(project)
 
     override fun checkConfiguration() {
         // TODO: add check for class or method?
     }
 
     override fun getState(executor: Executor, executionEnvironment: ExecutionEnvironment): RunProfileState? {
-        return VlangRunConfigurationRunState(executionEnvironment, this)
+        return VlangTestConfigurationRunState(executionEnvironment, this)
     }
 
     private fun Element.writeString(name: String, value: String) {
